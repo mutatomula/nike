@@ -132,3 +132,23 @@
 .fechar:hover {
     color: #ccc;
 }
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    .carrinho {
+        padding: 20px 10px;
+    }
+
+    .produto {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagem-container {
+        max-width: 100%;
+    }
+
+    .info {
+        margin-top: 20px;
+    }
+}
