@@ -1,0 +1,170 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Resumo do Carrinho */
+#resumo-carrinho {
+    margin-bottom: 30px;
+}
+
+#resumo-carrinho h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#resumo-carrinho table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+#resumo-carrinho th, #resumo-carrinho td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#resumo-carrinho th {
+    background-color: #f4f4f4;
+}
+
+#resumo-carrinho p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Introdução ao pagamento */
+.payment-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.payment-intro h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Opções de pagamento */
+.payment-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.payment-option {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.payment-option img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.payment-option h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.payment-option p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Botões de pagamento */
+.pix-button, .credito-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pix-button:hover, .credito-button:hover {
+    background-color: #333;
+}
+
+/* Formulário de cartão de crédito */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

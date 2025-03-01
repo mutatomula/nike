@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNike - Ganhe um Tênis Nike de Graça!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="icons8-nike-50.png" alt="Logo Nike">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.nike.com.br/hotsite/pegasus-premium">Lançamentos</a></li>
+                <li><a href="https://www.nike.com.br/sc/masculino-1">Masculino</a></li>
+                <li><a href="https://www.nike.com.br/nav/categorias/tenis/genero/feminino/tipodeproduto/calcados">Feminino</a></li>
+                <li><a href="https://www.nike.com.br/nav/ofertas/emoferta">Promoções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ganhe um Tênis Nike de Graça!</h1>
+            <p>Participe do quiz e leve um tênis Nike sem pagar nada. Você só paga o frete de R$ 50,00.</p>
+            <a href="#quiz" class="btn">Participar Agora</a>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz">
+        <h2>Responda o Quiz</h2>
+        <div class="progresso">
+            <div class="barra-progresso" id="barra-progresso"></div>
+        </div>
+        <form id="quizForm">
+            <!-- Pergunta 1 -->
+            <div class="pergunta ativa">
+                <label for="gosta-marca">Você gosta da marca Nike?</label>
+                <select id="gosta-marca" name="gosta-marca" required>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                </select>
+                <button type="button" class="btn proximo">Próxima Pergunta</button>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="pergunta">
+                <label for="melhorias">O que a Nike poderia melhorar?</label>
+                <textarea id="melhorias" name="melhorias" rows="4" required></textarea>
+                <button type="button" class="btn anterior">Anterior</button>
+                <button type="button" class="btn proximo">Próxima Pergunta</button>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="pergunta">
+                <label for="desempenho">Como você avalia o desempenho dos tênis Nike?</label>
+                <select id="desempenho" name="desempenho" required>
+                    <option value="excelente">Excelente</option>
+                    <option value="bom">Bom</option>
+                    <option value="regular">Regular</option>
+                    <option value="ruim">Ruim</option>
+                </select>
+                <button type="button" class="btn anterior">Anterior</button>
+                <button type="button" class="btn proximo">Próxima Pergunta</button>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="pergunta">
+                <label for="frequencia">Com que frequência você compra tênis?</label>
+                <select id="frequencia" name="frequencia" required>
+                    <option value="mensal">Mensalmente</option>
+                    <option value="trimestral">A cada 3 meses</option>
+                    <option value="semestral">A cada 6 meses</option>
+                    <option value="anual">Anualmente</option>
+                </select>
+                <button type="button" class="btn anterior">Anterior</button>
+                <button type="button" class="btn proximo">Próxima Pergunta</button>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="pergunta">
+                <label for="estilo">Qual estilo de tênis você mais gosta?</label>
+                <select id="estilo" name="estilo" required>
+                    <option value="esportivo">Esportivo</option>
+                    <option value="casual">Casual</option>
+                    <option value="corrida">Corrida</option>
+                    <option value="skate">Skate</option>
+                </select>
+                <button type="button" class="btn anterior">Anterior</button>
+                <button type="button" class="btn proximo">Próxima Pergunta</button>
+            </div>
+
+            <!-- Escolha do Tênis -->
+            <div class="pergunta">
+                <h3>Escolha seu Tênis</h3>
+                <div class="tenis-opcoes">
+                    <div class="tenis" data-tenis="tenis1" data-nome="Air Max 97" data-valor="799.99">
+                        <img src="48426fbe4ee8dcbcd9cf0c1213783c8c.avif" alt="Tênis Nike Esportivo">
+                        <p>Air Max 97</p>
+                        <button type="button">Selecionar</button>
+                    </div>
+                    <div class="tenis" data-tenis="tenis2" data-nome="Air Max 90" data-valor="699.99">
+                        <img src="s-l400.jpg" alt="Tênis Nike Casual">
+                        <p>Air Max 90</p>
+                        <button type="button">Selecionar</button>
+                    </div>
+                    <div class="tenis" data-tenis="tenis3" data-nome="Air Force 1" data-valor="599.99">
+                        <img src="images.jfif" alt="Tênis Nike Premium">
+                        <p>Air Force 1</p>
+                        <button type="button">Selecionar</button>
+                    </div>
+                </div>
+                <button type="button" class="btn anterior">Anterior</button>
+                <button type="button" class="btn proximo">Próxima Pergunta</button>
+            </div>
+
+            <!-- Escolha do Tamanho -->
+            <div class="pergunta">
+                <label for="tamanho">Escolha o tamanho:</label>
+                <select id="tamanho" name="tamanho" required>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                </select>
+                <button type="button" class="btn anterior">Anterior</button>
+                <button type="submit" class="btn">Enviar Respostas</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="icons8-nike-50.png" alt="Logo Nike">
+            </div>
+        </div>
+        <p>&copy; 2023 Nike. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - QuizNike</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carrinho.css"> <!-- CSS específico para o carrinho -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="icons8-nike-50.png" alt="Logo Nike">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.nike.com.br/hotsite/pegasus-premium">Lançamentos</a></li>
+                <li><a href="https://www.nike.com.br/sc/masculino-1">Masculino</a></li>
+                <li><a href="https://www.nike.com.br/nav/categorias/tenis/genero/feminino/tipodeproduto/calcados">Feminino</a></li>
+                <li><a href="https://www.nike.com.br/nav/ofertas/emoferta">Promoções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrinho -->
+    <section class="carrinho">
+        <h2>Seu Carrinho</h2>
+        <div class="produto">
+            <div class="imagem-container">
+                <img id="imagem-tenis" src="48426fbe4ee8dcbcd9cf0c1213783c8c.avif" alt="Tênis Nike">
+                <span class="lupa">🔍</span>
+            </div>
+            <div class="info">
+                <h3 id="nome-tenis">Air Max 97</h3>
+                <p id="descricao-tenis">Este tênis é perfeito para atividades esportivas, com amortecimento de alta qualidade e design moderno.</p>
+                <p><strong>Tamanho:</strong> <span id="tamanho-tenis">38</span></p>
+                <p><strong>Valor Original:</strong> <span id="valor-original" class="valor-riscado">R$ 799,99</span></p>
+                <p><strong>Valor com Desconto:</strong> <span id="valor-desconto">Grátis</span></p>
+                <p><strong>Frete:</strong> R$ 50,00</p>
+                <p><strong>Total:</strong> R$ 50,00</p>
+                <button onclick="window.location.href='pagamento.html'" class="btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="icons8-nike-50.png" alt="Logo Nike">
+            </div>
+        </div>
+        <p>&copy; 2023 Nike. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Recupera os dados do localStorage
+        const tenisEscolhido = localStorage.getItem('tenisEscolhido');
+        const tamanho = localStorage.getItem('tamanho');
+        const nomeTenis = localStorage.getItem('nomeTenis');
+        const valorOriginal = localStorage.getItem('valorOriginal');
+
+        // Atualiza a página com os dados do tênis escolhido
+        document.getElementById('nome-tenis').textContent = nomeTenis;
+        document.getElementById('tamanho-tenis').textContent = tamanho;
+        document.getElementById('valor-original').textContent = `R$ ${valorOriginal}`;
+
+        // Define a imagem correta
+        const imagemTenis = document.getElementById('imagem-tenis');
+        if (tenisEscolhido === 'tenis1') {
+            imagemTenis.src = '48426fbe4ee8dcbcd9cf0c1213783c8c.avif';
+        } else if (tenisEscolhido === 'tenis2') {
+            imagemTenis.src = 's-l400.jpg';
+        } else if (tenisEscolhido === 'tenis3') {
+            imagemTenis.src = 'images.jfif';
+        }
+
+        // Funcionalidade da lupa
+        const modal = document.getElementById('modal-imagem');
+        const imgAmpliada = document.getElementById('imagem-ampliada');
+        const lupa = document.querySelector('.lupa');
+
+        lupa.addEventListener('click', () => {
+            modal.style.display = 'block';
+            imgAmpliada.src = imagemTenis.src;
+        });
+
+        const fecharModal = document.querySelector('.fechar');
+        fecharModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
