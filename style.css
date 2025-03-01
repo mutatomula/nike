@@ -38,6 +38,16 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* Menu Hamburguer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
     background: url('imagens/hero-bg.jpg') no-repeat center center/cover;
@@ -321,4 +331,79 @@ footer .social-media img {
     border-radius: 50%;
     cursor: pointer;
     font-size: 20px;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .quiz h2 {
+        font-size: 2rem;
+    }
+
+    .quiz .tenis-opcoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quiz .tenis {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .social-media {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .quiz h2 {
+        font-size: 1.5rem;
+    }
+
+    .detalhes-tenis h2, .pagamento h2 {
+        font-size: 2rem;
+    }
 }
