@@ -43,7 +43,7 @@ header nav ul li a {
     display: none;
     background: none;
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 2rem;
     cursor: pointer;
 }
@@ -56,7 +56,7 @@ header nav ul li a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: #000000;
 }
 
 .hero-content h1 {
@@ -82,7 +82,7 @@ header nav ul li a {
 /* Quiz Section */
 .quiz {
     padding: 40px 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     text-align: center;
 }
 
@@ -94,7 +94,7 @@ header nav ul li a {
 
 .progresso {
     width: 100%;
-    background-color: #ddd;
+    background-color: #ffffff;
     border-radius: 5px;
     margin-bottom: 20px;
 }
