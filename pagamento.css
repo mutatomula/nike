@@ -168,3 +168,100 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2rem; /* Tamanho menor para o título */
+    }
+
+    .header-content p {
+        font-size: 1rem; /* Tamanho menor para o parágrafo */
+    }
+
+    .container {
+        padding: 15px; /* Reduz o padding em telas menores */
+    }
+
+    .payment-options {
+        flex-direction: column; /* Coloca as opções de pagamento em coluna */
+        gap: 15px;
+    }
+
+    .payment-option {
+        width: 100%; /* Faz cada opção ocupar 100% da largura */
+    }
+
+    .payment-option img {
+        width: 50px; /* Reduz o tamanho do ícone */
+        height: 50px;
+    }
+
+    .payment-option h3 {
+        font-size: 1.3rem; /* Tamanho menor para o título */
+    }
+
+    .payment-option p {
+        font-size: 0.9rem; /* Tamanho menor para o parágrafo */
+    }
+
+    .form-group input, .form-group select {
+        font-size: 0.9rem; /* Tamanho menor para os inputs */
+    }
+
+    .pix-button, .credito-button {
+        font-size: 0.9rem; /* Tamanho menor para os botões */
+        padding: 8px 16px;
+    }
+
+    #resumo-carrinho h3 {
+        font-size: 1.3rem; /* Tamanho menor para o título */
+    }
+
+    #resumo-carrinho th, #resumo-carrinho td {
+        padding: 8px; /* Reduz o padding da tabela */
+    }
+
+    #resumo-carrinho p {
+        font-size: 1rem; /* Tamanho menor para o texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.8rem; /* Tamanho ainda menor para o título */
+    }
+
+    .header-content p {
+        font-size: 0.9rem; /* Tamanho ainda menor para o parágrafo */
+    }
+
+    .payment-option h3 {
+        font-size: 1.2rem; /* Tamanho ainda menor para o título */
+    }
+
+    .payment-option p {
+        font-size: 0.8rem; /* Tamanho ainda menor para o parágrafo */
+    }
+
+    .form-group input, .form-group select {
+        font-size: 0.8rem; /* Tamanho ainda menor para os inputs */
+    }
+
+    .pix-button, .credito-button {
+        font-size: 0.8rem; /* Tamanho ainda menor para os botões */
+        padding: 6px 12px;
+    }
+
+    #resumo-carrinho h3 {
+        font-size: 1.2rem; /* Tamanho ainda menor para o título */
+    }
+
+    #resumo-carrinho th, #resumo-carrinho td {
+        padding: 6px; /* Reduz ainda mais o padding da tabela */
+    }
+
+    #resumo-carrinho p {
+        font-size: 0.9rem; /* Tamanho ainda menor para o texto */
+    }
+}
