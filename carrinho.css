@@ -1,6 +1,6 @@
 /* Estilos específicos para o carrinho */
 .carrinho {
-    padding: 20px 10px;
+    padding: 40px 20px;
     background-color: #fff;
     max-width: 1200px;
     margin: 0 auto;
@@ -9,23 +9,30 @@
 }
 
 .carrinho h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem; /* Tamanho menor para celular */
-    margin-bottom: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
     color: #000;
     text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .produto {
     display: flex;
-    flex-direction: column; /* Coluna para celular */
     align-items: center;
-    gap: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
     background-color: #f9f9f9;
     animation: fadeIn 0.5s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes fadeIn {
@@ -35,13 +42,18 @@
 
 .imagem-container {
     position: relative;
-    width: 100%; /* Ocupa toda a largura */
+    flex: 1;
     max-width: 300px;
 }
 
 .imagem-container img {
     width: 100%;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagem-container img:hover {
+    transform: scale(1.05);
 }
 
 .lupa {
@@ -49,10 +61,10 @@
     bottom: 10px;
     right: 10px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 8px;
+    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -61,19 +73,19 @@
 }
 
 .info {
-    width: 100%; /* Ocupa toda a largura */
-    text-align: center; /* Centraliza o conteúdo */
+    flex: 2;
 }
 
 .info h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; /* Tamanho menor para celular */
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 1.8rem;
     margin-bottom: 10px;
     color: #000;
+    font-weight: bold;
 }
 
 .info p {
-    font-size: 1rem; /* Tamanho menor para celular */
+    font-size: 1.1rem;
     margin-bottom: 10px;
     color: #555;
 }
@@ -86,19 +98,19 @@
 .info .btn {
     background-color: #000;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Botão ocupa toda a largura */
-    max-width: 200px; /* Limita a largura máxima */
-    margin: 10px auto; /* Centraliza o botão */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .info .btn:hover {
     background-color: #333;
+    transform: scale(1.05);
 }
 
 /* Modal para a imagem ampliada */
@@ -118,7 +130,7 @@
 .modal-conteudo {
     margin: auto;
     display: block;
-    max-width: 90%; /* Ajuste para celular */
+    max-width: 80%;
     max-height: 80%;
     border-radius: 10px;
 }
@@ -126,9 +138,9 @@
 .fechar {
     position: absolute;
     top: 20px;
-    right: 20px; /* Ajuste de posição para celular */
+    right: 35px;
     color: #fff;
-    font-size: 30px; /* Tamanho menor para celular */
+    font-size: 40px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -141,61 +153,24 @@
 /* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
     .carrinho {
-        padding: 15px 10px; /* Reduz o padding */
-    }
-
-    .carrinho h2 {
-        font-size: 1.8rem; /* Tamanho menor para o título */
+        padding: 20px 10px;
     }
 
     .produto {
-        padding: 10px; /* Reduz o padding */
-        gap: 15px; /* Reduz o espaçamento entre elementos */
+        flex-direction: column;
+        text-align: center;
     }
 
     .imagem-container {
-        max-width: 100%; /* Ocupa toda a largura */
+        max-width: 100%;
     }
 
-    .info h3 {
-        font-size: 1.4rem; /* Tamanho menor para o título do produto */
-    }
-
-    .info p {
-        font-size: 0.9rem; /* Tamanho menor para o texto */
+    .info {
+        margin-top: 20px;
     }
 
     .info .btn {
-        font-size: 0.9rem; /* Tamanho menor para o botão */
-        padding: 8px 16px;
-    }
-
-    .modal-conteudo {
-        max-width: 95%; /* Ajuste para celular */
-    }
-
-    .fechar {
-        font-size: 25px; /* Tamanho menor para o ícone de fechar */
-        top: 10px;
-        right: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carrinho h2 {
-        font-size: 1.6rem; /* Tamanho ainda menor para o título */
-    }
-
-    .info h3 {
-        font-size: 1.3rem; /* Tamanho ainda menor para o título do produto */
-    }
-
-    .info p {
-        font-size: 0.8rem; /* Tamanho ainda menor para o texto */
-    }
-
-    .info .btn {
-        font-size: 0.8rem; /* Tamanho ainda menor para o botão */
-        padding: 6px 12px;
+        width: 100%;
+        padding: 15px;
     }
 }
